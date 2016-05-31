@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="CybersportManager.Client.ViewPlayers"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CybersportManager.Client"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <UserControl.Resources>
+        <CollectionViewSource x:Key="ItemCollectionViewSource"  CollectionViewType="ListCollectionView"/>
+    </UserControl.Resources>
+    <Grid>
+        <Button x:Name="PlayerPageBtn" Content="Players" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" Width="63" Click="PlayerPageBtn_Click" Height="36"/>
+        <Button x:Name="TeamPageBtn" Content="Teams" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top" Width="63" Click="TeamPageBtn_Click" Height="36"/>
+        <Button x:Name="TournamentPageBtn" Content="Tournaments" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top" Width="63" Click="TournamentPageBtn_Click" Height="36"/>
+        <Button x:Name="HeroesPageBtn" Content="Heroes" HorizontalAlignment="Left" Margin="10,207,0,0" VerticalAlignment="Top" Width="63" Click="HeroesPageBtn_Click" Height="36"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="521" Margin="78,51,0,0" VerticalAlignment="Top" Width="2"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="697" Margin="425,-297,0,0" VerticalAlignment="Top" Width="2" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90.029"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Button x:Name="AddBtn" Content="Add" HorizontalAlignment="Left" Margin="134,10,0,0" VerticalAlignment="Top" Width="63" Click="AddBtn_Click" Height="36"/>
+        <Button x:Name="ViewBtn" Content="View" HorizontalAlignment="Left" Margin="218,10,0,0" VerticalAlignment="Top" Width="63" Click="ViewBtn_Click" Height="36"/>
+        <DataGrid DataContext= "{StaticResource ItemCollectionViewSource}"  ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" x:Name="playerTable1" HorizontalAlignment="Left" Height="419" Margin="104,76,0,0" VerticalAlignment="Top" Width="662">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}"/>
+                <DataGridTextColumn Header="Second Name" Binding="{Binding Path= SecondName}" />
+                <DataGridTextColumn Header="Nick Name" Binding="{Binding Path=NickName}"/>
+                <DataGridTextColumn Header="Age" Binding="{Binding Path=Age}"/>
+                <DataGridTextColumn Header="Role" Binding="{Binding Path=RoleType}"/>
+                <DataGridTextColumn Header="Team" Binding="{Binding Path=Team.Name}" />
+                <DataGridTextColumn Header="Country" Binding="{Binding Path=Country.Name}"/>                
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

@@ -24,5 +24,70 @@ namespace CybersportManager.Client
         {
             InitializeComponent();
         }
+        private ActivePage currentPage;
+        private void PlayerPageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            PlayersPage pp = new PlayersPage();
+            currentPage = ActivePage.Players;
+            pp.currentPage = this.currentPage;
+            this.Content = pp;
+        }
+
+        private void TeamPageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            TeamsPage tp = new TeamsPage();
+            currentPage = ActivePage.Teams;
+            tp.currentPage = this.currentPage;
+            this.Content = tp;
+
+        }
+
+        private void TournamentPageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            TournamentsPage tp = new TournamentsPage();
+            currentPage = ActivePage.Tournaments;
+            tp.currentPage = this.currentPage;
+            this.Content = tp;
+
+        }
+
+        private void HeroesPageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            HeroesPage hp = new HeroesPage();
+            currentPage = ActivePage.Heroes;
+            hp.currentPage = this.currentPage;
+            this.Content = hp;
+        }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            switch (currentPage)
+            {
+                case (ActivePage.Players):
+                    this.Content = new AddPlayer();
+                    break;
+                case (ActivePage.Teams):
+                    this.Content = new AddTeam();
+                    break;
+            }
+        }
+
+        private void ViewBtn_Click(object sender, RoutedEventArgs e)
+        {
+            switch (currentPage)
+            {
+                case (ActivePage.Players):
+                    this.Content = new ViewPlayers();
+                    break;
+                case (ActivePage.Teams):
+                    this.Content = new ViewTeams();
+                    break;
+            }
+        }
+
+        private void addbutton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

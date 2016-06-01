@@ -40,7 +40,7 @@ namespace Model
             { datalist.Add(Team.Name); }
             else
             { datalist.Add("None"); }
-            //datalist.Add(Homeland.Name);
+            datalist.Add(Homeland.Name);
             return datalist;
         }
 

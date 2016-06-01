@@ -13,7 +13,7 @@
         <Button x:Name="TournamentPageBtn" Content="Tournaments" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top" Width="63" Click="TournamentPageBtn_Click" Height="36"/>
         <Button x:Name="HeroesPageBtn" Content="Heroes" HorizontalAlignment="Left" Margin="10,207,0,0" VerticalAlignment="Top" Width="63" Click="HeroesPageBtn_Click" Height="36"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="521" Margin="78,51,0,0" VerticalAlignment="Top" Width="2"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="697" Margin="425,-297,0,0" VerticalAlignment="Top" Width="2" RenderTransformOrigin="0.5,0.5">
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="697" Margin="427,-296,0,0" VerticalAlignment="Top" Width="2" RenderTransformOrigin="0.5,0.5">
             <Border.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -33,7 +33,7 @@
         <TextBox x:Name="nnametb" HorizontalAlignment="Left" Height="29" Margin="216,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
         <Label x:Name="agelabel" Content="Age:" HorizontalAlignment="Left" Margin="119,264,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
         <TextBox x:Name="agetb" HorizontalAlignment="Left" Height="29" Margin="216,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58"/>
-        <Button x:Name="addplayerbutton" Content="Confirm"  HorizontalAlignment="Left" Margin="119,348,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="button_Click"/>
+        <Button x:Name="addplayerbutton" Content="Confirm"  HorizontalAlignment="Left" Margin="668,546,0,0" VerticalAlignment="Top" Width="74" Height="26" Click="button_Click"/>
         <ComboBox x:Name="teamcb" HorizontalAlignment="Left" Margin="571,149,0,0" VerticalAlignment="Top" Width="120" Height="29"/>
         <Label x:Name="rolelabel" Content="Role:" HorizontalAlignment="Left" Margin="491,91,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
         <ComboBox x:Name="rolecb" HorizontalAlignment="Left" Margin="571,93,0,0" VerticalAlignment="Top" Width="120" Height="29">
@@ -44,26 +44,18 @@
             <ComboBoxItem Name="Support">Support</ComboBoxItem>
         </ComboBox>
         <Label x:Name="teamlabel" Content="Team:" HorizontalAlignment="Left" Margin="491,149,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
-        <ComboBox x:Name="countrycb" HorizontalAlignment="Left" Margin="571,207,0,0" VerticalAlignment="Top" Width="120" Height="29">
-            <ComboBoxItem>
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="C:/Users/Naiil/Desktop/CybersportManager/CybersportManager.Client/images/countryimages/southkorea.jpg" Width="35" Height="25"/>
-                    <TextBlock Text=" South Korea"/>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="C:/Users/Naiil/Desktop/CybersportManager/CybersportManager.Client/images/countryimages/na.jpg" Width="30" Height="25"/>
-                    <TextBlock Text=" USA"/>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="C:/Users/Naiil/Desktop/CybersportManager/CybersportManager.Client/images/countryimages/denmark.jpg" Width="30" Height="25"/>
-                    <TextBlock Text=" Denmark"/>
-                </StackPanel>
-            </ComboBoxItem>
+        <ComboBox  x:Name="countrycb" HorizontalAlignment="Left" Margin="571,207,0,0" VerticalAlignment="Top" Width="140" Height="36">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Width="30" Height="25" Source="{Binding CountryImg}"></Image>
+                        <TextBlock FontSize="14" Text="{Binding Name}"  Margin="5,0,0,0"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
         </ComboBox>
         <Label x:Name="countrylabel" Content="Country" HorizontalAlignment="Left" Margin="491,207,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="133" Margin="119,316,0,0" VerticalAlignment="Top" Width="123"/>
+        <Button x:Name="selectimage" Content="Choose Image"  HorizontalAlignment="Left" Margin="119,468,0,0" VerticalAlignment="Top" Width="75" Height="26" Click="selectimage_Click"/>
     </Grid>
 </UserControl>

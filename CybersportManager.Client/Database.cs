@@ -43,7 +43,7 @@ namespace CybersportManager.Client
                         else {
                             newplayer123.Team = searchTeam(row[i + 5]);
                         }
-                        //Homeland = GetCountry(row[i + 6]);
+                        newplayer123.Homeland = searchCountry(row[i + 6]);
                         allPlayers.Add(newplayer123);
                         break;
                     }

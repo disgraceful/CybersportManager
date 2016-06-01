@@ -16,10 +16,20 @@ namespace Model
         public string TeamTag { get; set; }
         public Region TeamRegion { get; set; }
         public string Imgpath { get; set; }
+        public List<Tournament> Participations = new List<Tournament>();
 
         public Team(string name,string teamtag) : base(name) { }
         public Team(string name,string teamtag,Region region) : base(name) { }
         public Team(string name, string teamtag, List<Player>roster, Region region) : base(name) { }
+
+        public List<string> fieldsToList()
+        {
+            List<string> datalist = new List<string>();
+            datalist.Add(Name);
+            datalist.Add(TeamTag);
+            datalist.Add(TeamRegion.ToString());
+            return datalist;
+        }
     }
     public enum Region
     {

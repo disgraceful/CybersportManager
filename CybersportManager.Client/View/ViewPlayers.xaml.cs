@@ -23,13 +23,14 @@ namespace CybersportManager.Client
         public ActivePage currentPage;
         public ViewPlayers()
         {
+            
             InitializeComponent();
-            var list = Database.DB.Playerlist;
+            var list = Database.allPlayers;
             CollectionViewSource itemCollectionViewSource;
             itemCollectionViewSource = (CollectionViewSource)(FindResource("ItemCollectionViewSource"));
             itemCollectionViewSource.Source = list;
             //this.playerTable1.ItemsSource = Database.DB.Playerlist;
-            this.UpdateLayout();
+            
         }
 
         private void PlayerPageBtn_Click(object sender, RoutedEventArgs e)

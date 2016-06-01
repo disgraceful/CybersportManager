@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Model;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 namespace CybersportManager.Client
 {
@@ -27,8 +28,6 @@ namespace CybersportManager.Client
         {
             this.DataContext = this;
             InitializeComponent();
-
-         
             FillTeamComboBox();
         }
 
@@ -45,23 +44,19 @@ namespace CybersportManager.Client
         }
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            if (nametb.Text != null & snametb.Text != null && nnametb.Text != null && agetb.Text != null && rolecb.Text !=null)
+            if (nametb.Text != null & snametb.Text != null && nnametb.Text != null && agetb.Text != null&& agetb.Text.All(char.IsDigit) && rolecb.SelectedItem !=null)
             {
-                List<string> data = new List<string>();
-                data.Add(nametb.Text);
-                data.Add(snametb.Text);
-                data.Add(nnametb.Text);
-                data.Add(agetb.Text);
-                data.Add(rolecb.Text.ToString());
-                if (teamcb.Text != null)
+               
+               
+                Player newplayer = new Player(nametb.Text, snametb.Text, nnametb.Text, Convert.ToInt32(agetb.Text), (RoleType)Enum.Parse(typeof(RoleType), rolecb.Text));
+                if (teamcb.SelectedItem != null)
                 {
-
-                    data.Add(teamcb.Text.ToString());
+                    newplayer.Team = Database.searchTeam(teamcb.Text);
                 }
                 else
-                    data.Add("None");
-                data.Add(countrycb.Text.ToString());
-                Database.DB.AddPlayer(data);
+                { newplayer.Teamless = true; }
+                newplayer.Homeland = Database.searchCountry(countrycb.Text);
+                Database.addPlayer(newplayer);
                 ClearInputs();
             }
             else
@@ -71,15 +66,12 @@ namespace CybersportManager.Client
         private ActivePage currentPage;
         private void FillTeamComboBox()
         {
-            foreach (Team team in Database.DB.Teamlist)
+            foreach (Team team in Database.allTeams)
             {
                 teamcb.Items.Add(team.Name);
             }
         }
-
-       
-     
-
+        
         private void PlayerPageBtn_Click(object sender, RoutedEventArgs e)
         {
             PlayersPage pp = new PlayersPage();

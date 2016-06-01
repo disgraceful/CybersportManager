@@ -24,9 +24,25 @@ namespace Model
         {
             this.SecondName = secondname;
             this.NickName = nick;
+            this.Age = age;
             this.RoleType = roletype;
         }
-      
+
+        public List<string> fieldsToList()
+        {
+            List<string> datalist = new List<string>();
+            datalist.Add(Name);
+            datalist.Add(SecondName);
+            datalist.Add(NickName);
+            datalist.Add(Age.ToString());
+            datalist.Add(RoleType.ToString());
+            if (!Teamless)
+            { datalist.Add(Team.Name); }
+            else
+            { datalist.Add("None"); }
+            //datalist.Add(Homeland.Name);
+            return datalist;
+        }
 
     }
 }

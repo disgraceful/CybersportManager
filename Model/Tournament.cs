@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Tournament:Base<Tournament>
+    public class Tournament:Base<Tournament>
     {
         public Region CurrentRegion { get; set; }
         public int Prizepool { get; set; }

@@ -24,8 +24,8 @@ namespace CybersportManager.Client
         public Main()
         {
             InitializeComponent();
-            Database.DB.ReadPlayers();
-            //db.ReadTeams();
+            Database.readPlayers();
+            Database.readTeams();
         }
         private void PlayerPageBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -85,6 +85,12 @@ namespace CybersportManager.Client
                     this.Content = new ViewTeams();
                     break;
             }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Database.savePlayers();
+            Database.saveTeams();
         }
     }
 

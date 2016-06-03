@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 
 
-namespace Model
+namespace CybersportManager.Client
 {
     public class Country : Base<Country>
     {

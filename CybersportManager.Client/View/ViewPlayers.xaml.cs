@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace CybersportManager.Client
 {
     /// <summary>
@@ -29,8 +30,7 @@ namespace CybersportManager.Client
             CollectionViewSource itemCollectionViewSource;
             itemCollectionViewSource = (CollectionViewSource)(FindResource("ItemCollectionViewSource"));
             itemCollectionViewSource.Source = list;
-            //this.playerTable1.ItemsSource = Database.DB.Playerlist;
-            
+                     
         }
 
         private void PlayerPageBtn_Click(object sender, RoutedEventArgs e)

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model
+namespace CybersportManager.Client
 {
     public class Base<T> where T : Base<T>
     {

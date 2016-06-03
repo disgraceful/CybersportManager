@@ -4,8 +4,9 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
-namespace Model
+namespace CybersportManager.Client
 {
     public class Player : Base<Player>
     {
@@ -15,10 +16,9 @@ namespace Model
         public Role Role { get; set; }
         public RoleType RoleType {get;set;}
         public Team Team { get; set; }
-        public string Imgpath { get; set; }
+        public BitmapImage Img { get; set; }
         public bool Teamless { get; set; }
         public Country Homeland { get; set; }
-
            
         public Player(string name, string secondname, string nick, int age, RoleType roletype) : base(name)
         {
@@ -41,6 +41,7 @@ namespace Model
             else
             { datalist.Add("None"); }
             datalist.Add(Homeland.Name);
+            datalist.Add(Img.UriSource.ToString());
             return datalist;
         }
 

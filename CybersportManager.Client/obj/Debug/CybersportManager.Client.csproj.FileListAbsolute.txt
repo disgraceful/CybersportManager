@@ -28,8 +28,6 @@ C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\obj\Debug\Cybe
 C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\obj\Debug\CybersportManager.Client_MarkupCompile.lref
 C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\bin\Debug\CybersportManager.Client.exe
 C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\bin\Debug\CybersportManager.Client.pdb
-C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\bin\Debug\Model.dll
-C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\bin\Debug\Model.pdb
 C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\obj\Debug\CybersportManager.Client.g.resources
 C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\obj\Debug\CybersportManager.Client.Properties.Resources.resources
 C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\obj\Debug\CybersportManager.Client.csproj.GenerateResource.Cache
@@ -52,3 +50,5 @@ C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\obj\Debug\View
 C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\obj\Debug\View\ViewPlayers.baml
 C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\obj\Debug\View\ViewTeams.baml
 C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\obj\Debug\App.g.cs
+C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\bin\Debug\images\players\default_player.jpg
+C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\obj\Debug\CybersportManager.Client_Content.g.cs

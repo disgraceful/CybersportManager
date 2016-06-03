@@ -36,7 +36,13 @@
                 <DataGridTextColumn Header="Role" Binding="{Binding Path=RoleType}"/>
                 <DataGridTextColumn Header="Team" Binding="{Binding Path=Team}" />
                 <DataGridTextColumn Header="Country" Binding="{Binding Path=Country}"/>
-                <DataGridTextColumn Header="Image" Binding="{Binding Path= Imgpath}"/>
+                <DataGridTemplateColumn Header="Image">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Path = Img}" Width="150" Height="200" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

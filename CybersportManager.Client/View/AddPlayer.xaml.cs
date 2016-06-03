@@ -12,9 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Model;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using Microsoft.Win32;
+using System.IO;
 
 namespace CybersportManager.Client
 {
@@ -23,7 +24,7 @@ namespace CybersportManager.Client
     /// </summary>
     public partial class AddPlayer : UserControl
     {
-        
+
         public AddPlayer()
         {
             this.DataContext = this;
@@ -46,9 +47,9 @@ namespace CybersportManager.Client
         }
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            if (nametb.Text != null & snametb.Text != null && nnametb.Text != null && agetb.Text != null&& agetb.Text.All(char.IsDigit) && rolecb.SelectedItem !=null)
+            if (nametb.Text != null & snametb.Text != null && nnametb.Text != null && agetb.Text != null && agetb.Text.All(char.IsDigit) && rolecb.SelectedItem != null)
             {
-               
+
                 Player newplayer = new Player(nametb.Text, snametb.Text, nnametb.Text, Convert.ToInt32(agetb.Text), (RoleType)Enum.Parse(typeof(RoleType), rolecb.Text));
                 if (teamcb.SelectedItem != null)
                 {
@@ -58,16 +59,28 @@ namespace CybersportManager.Client
                 else
                 { newplayer.Teamless = true; }
                 newplayer.Homeland = countrycb.SelectedItem as Country;
+                newplayer.Img = new BitmapImage(new Uri(image.Source.ToString()));
+               
                 Database.addPlayer(newplayer);
                 ClearInputs();
             }
             else
                 MessageBox.Show("Eror");
         }
+
+        OpenFileDialog op = new OpenFileDialog();
         private void selectimage_Click(object sender, RoutedEventArgs e)
         {
-
+            op.Title = "Select an image";
+            op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
+              "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
+              "Portable Network Graphic (*.png)|*.png";
+            if (op.ShowDialog() == true)
+            {
+                image.Source = new BitmapImage(new Uri(op.FileName));
+            }
         }
+
         private ActivePage currentPage;
         private void FillTeamComboBox()
         {
@@ -76,7 +89,7 @@ namespace CybersportManager.Client
                 teamcb.Items.Add(team.Name);
             }
         }
-        
+
         private void PlayerPageBtn_Click(object sender, RoutedEventArgs e)
         {
             PlayersPage pp = new PlayersPage();
@@ -137,6 +150,6 @@ namespace CybersportManager.Client
             }
         }
 
-        
+
     }
 }

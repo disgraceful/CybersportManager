@@ -24,7 +24,7 @@
             </Border.RenderTransform>
         </Border>
         <Button x:Name="AddBtn" Content="Add" HorizontalAlignment="Left" Margin="134,10,0,0" VerticalAlignment="Top" Width="63" Click="AddBtn_Click" Height="36"/>
-        <Button x:Name="ViewBtn" Content="View" HorizontalAlignment="Left" Margin="218,10,0,0" VerticalAlignment="Top" Width="63" Click="ViewBtn_Click" Height="36"/>
+        <Button x:Name="ViewBtn" Content="View" HorizontalAlignment="Left" Margin="211,10,0,0" VerticalAlignment="Top" Width="63" Click="ViewBtn_Click" Height="36"/>
         <Label x:Name="namelabel" Content="Name:" HorizontalAlignment="Left" Margin="119,93,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
         <Label x:Name="snamelabel" Content="Second Name:" HorizontalAlignment="Left" Margin="119,149,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
         <Label x:Name="nnamelabel" Content="Nick Name:" HorizontalAlignment="Left" Margin="119,207,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
@@ -33,7 +33,7 @@
         <TextBox x:Name="nnametb" HorizontalAlignment="Left" Height="29" Margin="216,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
         <Label x:Name="agelabel" Content="Age:" HorizontalAlignment="Left" Margin="119,264,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
         <TextBox x:Name="agetb" HorizontalAlignment="Left" Height="29" Margin="216,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58"/>
-        <Button x:Name="addplayerbutton" Content="Confirm"  HorizontalAlignment="Left" Margin="668,546,0,0" VerticalAlignment="Top" Width="74" Height="26" Click="button_Click"/>
+        <Button x:Name="addplayerbutton" Content="Confirm"  HorizontalAlignment="Left" Margin="669,503,0,0" VerticalAlignment="Top" Width="74" Height="26" Click="button_Click"/>
         <ComboBox x:Name="teamcb" HorizontalAlignment="Left" Margin="571,149,0,0" VerticalAlignment="Top" Width="120" Height="29"/>
         <Label x:Name="rolelabel" Content="Role:" HorizontalAlignment="Left" Margin="491,91,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
         <ComboBox x:Name="rolecb" HorizontalAlignment="Left" Margin="571,93,0,0" VerticalAlignment="Top" Width="120" Height="29">
@@ -44,7 +44,7 @@
             <ComboBoxItem Name="Support">Support</ComboBoxItem>
         </ComboBox>
         <Label x:Name="teamlabel" Content="Team:" HorizontalAlignment="Left" Margin="491,149,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
-        <ComboBox  x:Name="countrycb" HorizontalAlignment="Left" Margin="571,207,0,0" VerticalAlignment="Top" Width="140" Height="36">
+        <ComboBox  x:Name="countrycb" HorizontalAlignment="Left" Margin="571,207,0,0" VerticalAlignment="Top" Width="140" Height="29">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -55,7 +55,7 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <Label x:Name="countrylabel" Content="Country" HorizontalAlignment="Left" Margin="491,207,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="133" Margin="119,316,0,0" VerticalAlignment="Top" Width="123"/>
-        <Button x:Name="selectimage" Content="Choose Image"  HorizontalAlignment="Left" Margin="119,468,0,0" VerticalAlignment="Top" Width="75" Height="26" Click="selectimage_Click"/>
+        <Button x:Name="selectimage" Content="Change Image"  HorizontalAlignment="Left" Margin="119,468,0,0" VerticalAlignment="Top" Width="92" Height="26" Click="selectimage_Click"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="111,323,0,0" VerticalAlignment="Top" Width="100" Source="pack://siteoforigin:,,,/images/players/default_player.jpg"/>
     </Grid>
 </UserControl>

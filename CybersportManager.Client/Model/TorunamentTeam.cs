@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CybersportManager.Client
+namespace CybersportManager.Client.Model
 {
-    class Discipline
+    class TorunamentTeam
     {
-
     }
 }

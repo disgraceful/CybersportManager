@@ -56,6 +56,6 @@
         </ComboBox>
         <Label x:Name="countrylabel" Content="Country" HorizontalAlignment="Left" Margin="491,207,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
         <Button x:Name="selectimage" Content="Change Image"  HorizontalAlignment="Left" Margin="119,468,0,0" VerticalAlignment="Top" Width="92" Height="26" Click="selectimage_Click"/>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="111,323,0,0" VerticalAlignment="Top" Width="100" Source="pack://siteoforigin:,,,/images/players/default_player.jpg"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="118" Margin="111,323,0,0" VerticalAlignment="Top" Width="100" Source="pack://siteoforigin:,,,/images/players/default_player.jpg"/>
     </Grid>
 </UserControl>

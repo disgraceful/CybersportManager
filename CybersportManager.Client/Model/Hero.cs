@@ -10,12 +10,9 @@ namespace CybersportManager.Client
     {
         public string SecondaryName { get; set; }
         public string Imgpath { get; set; }
-        public List<RoleType> roles = new List<RoleType>();
-        public List<RoleType> HeroRoles
-        {
-            get { return roles; }
-            set { roles = value; }
-        }
+        public List<RoleType> HeroRoles { get; set;}
+
+        public List<Player> Playerlist => Base<Role>.Items.Values.Where(x => x.Hero == this).Select(x => x.Player).ToList();
 
         public Hero(string name, string sname,List<RoleType>roles,string imgpath):base(name)
         {

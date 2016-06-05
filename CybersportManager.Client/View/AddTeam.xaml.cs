@@ -23,7 +23,16 @@ namespace CybersportManager.Client
         public AddTeam()
         {
             InitializeComponent();
+
+            listView.ItemsSource = Database.allPlayers;
+            //foreach (Player p in Database.allPlayers)
+            //{
+            //    listView.Items.Add(p.Img);
+            //}
         }
+
+
+
         private ActivePage currentPage;
         private void PlayerPageBtn_Click(object sender, RoutedEventArgs e)
         {

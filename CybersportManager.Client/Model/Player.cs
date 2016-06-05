@@ -13,19 +13,49 @@ namespace CybersportManager.Client
         public string SecondName { get; set; }
         public string NickName { get; set; }
         public int Age { get; set; }
-        public Role Role { get; set; }
-        public RoleType RoleType {get;set;}
-        public Team Team { get; set; }
         public BitmapImage Img { get; set; }
-        public bool Teamless { get; set; }
-        public Country Homeland { get; set; }
-           
+        public string Homeland { get; set; }
+        public bool Teamless => _teamid != null ? true : false;
+
+        private Guid _teamid;
+
+        public Team Team
+        {
+            get {
+                if (!Teamless)
+                    return Base<Team>.Items[_teamid];
+                else
+                    return null;
+            }
+        }
+
+        public string TeamName
+        {
+            get { if (!Teamless)
+                {
+                    return Base<Team>.Items[_teamid].Name;
+
+                }
+                else
+                    return "-";
+            }
+    
+        }
+        public RoleType RoleType {get;set;}
+
+        public List<Hero> Herolist => Base<Role>.Items.Values.Where(x => x.Player == this).Select(x => x.Hero).ToList();
+
+        public void SetTeam(Team t)
+        {
+            _teamid = t.Id;
+        }
+
         public Player(string name, string secondname, string nick, int age, RoleType roletype) : base(name)
         {
-            this.SecondName = secondname;
-            this.NickName = nick;
-            this.Age = age;
-            this.RoleType = roletype;
+            SecondName = secondname;
+            NickName = nick;
+            Age = age;
+            RoleType = roletype;
         }
 
         public List<string> fieldsToList()
@@ -40,7 +70,7 @@ namespace CybersportManager.Client
             { datalist.Add(Team.Name); }
             else
             { datalist.Add("None"); }
-            datalist.Add(Homeland.Name);
+            datalist.Add(Homeland);
             datalist.Add(Img.UriSource.ToString());
             return datalist;
         }

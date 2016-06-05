@@ -136,13 +136,4 @@
   <data name="default_player" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\players\default_player.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="denmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\countryimages\denmark.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="na" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\countryimages\na.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="southkorea" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\countryimages\southkorea.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

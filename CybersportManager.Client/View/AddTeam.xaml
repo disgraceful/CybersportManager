@@ -24,18 +24,34 @@
         </Border>
         <Button x:Name="AddBtn" Content="Add" HorizontalAlignment="Left" Margin="134,10,0,0" VerticalAlignment="Top" Width="63" Click="AddBtn_Click" Height="36"/>
         <Button x:Name="ViewBtn" Content="View" HorizontalAlignment="Left" Margin="218,10,0,0" VerticalAlignment="Top" Width="63" Click="ViewBtn_Click" Height="36"/>
-        <Label x:Name="namelabel" Content="Name:" HorizontalAlignment="Left" Margin="108,93,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
-        <Label x:Name="taglabel" Content="Tag:" HorizontalAlignment="Left" Margin="108,149,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
-        <TextBox x:Name="nametb" HorizontalAlignment="Left" Height="29" Margin="180,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106"/>
-        <TextBox x:Name="tagtb" HorizontalAlignment="Left" Height="29" Margin="180,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
-        <Button x:Name="addbutton" Content="Confirm"  HorizontalAlignment="Left" Margin="119,348,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="addbutton_Click"/>
-        <Label x:Name="regionlabel" Content="Region:" HorizontalAlignment="Left" Margin="108,212,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
-        <ComboBox x:Name="rolecb" HorizontalAlignment="Left" Margin="180,212,0,0" VerticalAlignment="Top" Width="101" Height="29">
-            <ComboBoxItem Name="Top">Top</ComboBoxItem>
-            <ComboBoxItem Name="Jungle">Jungle</ComboBoxItem>
-            <ComboBoxItem Name="Mid">Mid</ComboBoxItem>
-            <ComboBoxItem Name="Carry">Carry</ComboBoxItem>
-            <ComboBoxItem Name="Support">Support</ComboBoxItem>
+        <Label x:Name="namelabel" Content="Name:" HorizontalAlignment="Left" Margin="108,88,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
+        <Label x:Name="taglabel" Content="Tag:" HorizontalAlignment="Left" Margin="108,144,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
+        <TextBox x:Name="nametb" HorizontalAlignment="Left" Height="29" Margin="180,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106"/>
+        <TextBox x:Name="tagtb" HorizontalAlignment="Left" Height="29" Margin="180,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
+        <Button x:Name="addbutton" Content="Confirm"  HorizontalAlignment="Left" Margin="108,391,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="addbutton_Click"/>
+        <Label x:Name="regionlabel" Content="Region:" HorizontalAlignment="Left" Margin="108,207,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
+        <ComboBox x:Name="regioncb" HorizontalAlignment="Left" Margin="180,207,0,0" VerticalAlignment="Top" Width="101" Height="29">
+            <ComboBoxItem Name="Europe">Europe</ComboBoxItem>
+            <ComboBoxItem Name="NorthAmerica">NorthAmerica</ComboBoxItem>
+            <ComboBoxItem Name="Asia">Asia</ComboBoxItem>
         </ComboBox>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="361" Margin="637,68,0,0" VerticalAlignment="Top" Width="139">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Image Source="{Binding Img}" Height="80" Width="60" Margin="5" Grid.Column="0"/>
+                        <TextBlock>
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}{0} {1}">
+                                    <Binding Path="NickName" />
+                                    <Binding Path="RoleType" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
     </Grid>
 </UserControl>

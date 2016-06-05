@@ -10,7 +10,7 @@ namespace CybersportManager.Client
     {
         public Region CurrentRegion { get; set; }
         public int Prizepool { get; set; }
-        public List<Team> Invited { get; set; }
+        public List<Team> Invited => Base<TournamentTeam>.Items.Values.Where(x => x.Tournament == this).Select(x => x.Team).ToList();
 
         public Tournament(string name, int prizepool,Region CurrentRegion) : base(name)
         { }

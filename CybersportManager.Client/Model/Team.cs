@@ -6,21 +6,24 @@ using System.Threading.Tasks;
 
 namespace CybersportManager.Client
 {
-    public class Team:Base<Player>
+    public class Team:Base<Team>
     {
-        public List<Player> curroster = new List<Player>();
-        public List<Player>CurRoster { get; set; }
-        public List<Player> subs = new List<Player>();
-        public List<Player> Subs { get; set; }
-
         public string TeamTag { get; set; }
         public Region TeamRegion { get; set; }
         public string Imgpath { get; set; }
-        public List<Tournament> Participations = new List<Tournament>();
 
-        public Team(string name,string teamtag) : base(name) { }
-        public Team(string name,string teamtag,Region region) : base(name) { }
-        public Team(string name, string teamtag, List<Player>roster, Region region) : base(name) { }
+        public List<Player> CurRoster
+        {
+            get { return Base<Player>.Items.Values.Where(x => x.Team == this).ToList(); }
+        }
+     
+        public List<Tournament> Participations => Base<TournamentTeam>.Items.Values.Where(x => x.Team == this).Select(x => x.Tournament).ToList();
+     
+        public Team(string name, string teamtag, Region region) : base(name)
+        {
+            this.TeamTag = teamtag;
+            this.TeamRegion = region;
+        }
 
         public List<string> fieldsToList()
         {
@@ -30,6 +33,17 @@ namespace CybersportManager.Client
             datalist.Add(TeamRegion.ToString());
             return datalist;
         }
+
+        public override string ToString()
+        {
+            if (this == null)
+            {
+                return "None";
+            }
+            else
+                return Name;
+        }
+        
     }
     public enum Region
     {

@@ -27,19 +27,19 @@
         </Border>
         <Button x:Name="AddBtn" Content="Add" HorizontalAlignment="Left" Margin="134,10,0,0" VerticalAlignment="Top" Width="63" Click="AddBtn_Click" Height="36"/>
         <Button x:Name="ViewBtn" Content="View" HorizontalAlignment="Left" Margin="218,10,0,0" VerticalAlignment="Top" Width="63" Click="ViewBtn_Click" Height="36"/>
-        <DataGrid DataContext= "{StaticResource ItemCollectionViewSource}"  ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" x:Name="playerTable1" HorizontalAlignment="Left" Height="419" Margin="104,76,0,0" VerticalAlignment="Top" Width="662">
+        <DataGrid x:Name="playerTable1"  DataContext= "{StaticResource ItemCollectionViewSource}"  ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"  HorizontalAlignment="Left" Height="419" Margin="80,82,0,0" VerticalAlignment="Top" Width="662">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}"/>
                 <DataGridTextColumn Header="Second Name" Binding="{Binding Path= SecondName}" />
                 <DataGridTextColumn Header="Nick Name" Binding="{Binding Path=NickName}"/>
                 <DataGridTextColumn Header="Age" Binding="{Binding Path=Age}"/>
                 <DataGridTextColumn Header="Role" Binding="{Binding Path=RoleType}"/>
-                <DataGridTextColumn Header="Team" Binding="{Binding Path=Team}" />
-                <DataGridTextColumn Header="Country" Binding="{Binding Path=Country}"/>
+                <DataGridTextColumn Header="Team" Binding="{Binding Path=TeamName}"/>
+                <DataGridTextColumn Header="Country" Binding="{Binding Path=Homeland}"/>
                 <DataGridTemplateColumn Header="Image">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Image Source="{Binding Path = Img}" Width="150" Height="200" />
+                            <Image Source="{Binding Path = Img}" Width="150" Height="200"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -24,15 +27,13 @@ namespace CybersportManager.Client
         public ActivePage currentPage;
         public ViewPlayers()
         {
-            
+            var list = Database.allPlayers;   
             InitializeComponent();
-            var list = Database.allPlayers;
             CollectionViewSource itemCollectionViewSource;
             itemCollectionViewSource = (CollectionViewSource)(FindResource("ItemCollectionViewSource"));
             itemCollectionViewSource.Source = list;
-                     
         }
-
+      
         private void PlayerPageBtn_Click(object sender, RoutedEventArgs e)
         {
             PlayersPage pp = new PlayersPage();

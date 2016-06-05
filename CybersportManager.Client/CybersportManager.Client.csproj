@@ -58,12 +58,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\Base.cs" />
-    <Compile Include="Model\Country.cs" />
-    <Compile Include="Model\Discipline.cs" />
     <Compile Include="Model\Hero.cs" />
     <Compile Include="Model\Player.cs" />
     <Compile Include="Model\Role.cs" />
     <Compile Include="Model\Team.cs" />
+    <Compile Include="Model\TorunamentTeam.cs" />
     <Compile Include="Model\Tournament.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -179,9 +178,6 @@
     <None Include="images\players\AG_Xpecial_1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\countryimages\southkorea.jpg" />
-    <None Include="images\countryimages\na.jpg" />
-    <None Include="images\countryimages\denmark.jpg" />
     <Content Include="images\players\default_player.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

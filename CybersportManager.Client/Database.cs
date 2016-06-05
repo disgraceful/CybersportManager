@@ -7,6 +7,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
+using System.Windows.Controls;
 
 namespace CybersportManager.Client
 {
@@ -14,16 +15,12 @@ namespace CybersportManager.Client
     {
         public static List<Player> allPlayers;
         public static List<Team> allTeams;
-        public static List<Country> allCountries = new List<Country>();
         public static List<Hero> allHeroes = new List<Hero>();
         public static List<Tournament> allTournaments = new List<Tournament>();
 
         private static string rootPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
 
-        static Database()
-        {
-            fillCountries();
-        }
+      
         public static void readPlayers()
         {
             Debug.Write(rootPath);
@@ -37,14 +34,11 @@ namespace CybersportManager.Client
                     for (int i = 0; i < row.Count; i++)
                     {
                         Player newplayer123 = new Player(row[i], row[i + 1], row[i + 2], Convert.ToInt32(row[i + 3]), (RoleType)Enum.Parse(typeof(RoleType), row[i + 4]));
-                        if (row[i + 5] == "None")
+                        if (row[i + 5] != "None")
                         {
-                            newplayer123.Teamless = true;
+                            newplayer123.SetTeam(searchTeam(row[i + 5]));
                         }
-                        else {
-                            newplayer123.Team = searchTeam(row[i + 5]);
-                        }
-                        newplayer123.Homeland = searchCountry(row[i + 6]);
+                        newplayer123.Homeland = row[i + 6];
                         newplayer123.Img = new BitmapImage(new Uri(row[i + 7]));
                         allPlayers.Add(newplayer123);
                         break;
@@ -126,25 +120,6 @@ namespace CybersportManager.Client
                 }
             }
             catch { }
-        }
-
-        private static void fillCountries()
-        {
-            allCountries.Add(new Country(rootPath + "/images/countryimages/southkorea.jpg", "South Korea"));
-            allCountries.Add(new Country(rootPath + "/images/countryimages/denmark.jpg", "Denmark"));
-            allCountries.Add(new Country(rootPath + "/images/countryimages/na.jpg", "USA"));
-        }
-
-        public static Country searchCountry(string name)
-        {
-            foreach (Country country in allCountries)
-            {
-                if (country.Name == name)
-                {
-                    return country;
-                }
-            }
-            return null;
         }
 
         public static Team searchTeam(string teamname)
@@ -257,7 +232,7 @@ namespace CybersportManager.Client
 
             return (row.Count > 0);
         }
-
+ 
     }
 }
 

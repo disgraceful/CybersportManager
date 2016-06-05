@@ -30,12 +30,10 @@ namespace CybersportManager.Client
             this.DataContext = this;
             InitializeComponent();
             FillTeamComboBox();
-            countrylist = Database.allCountries;
-            countrycb.ItemsSource = countrylist;
         }
 
 
-        List<Country> countrylist = new List<Country>();
+     
         private void ClearInputs()
         {
             nametb.Text = "";
@@ -53,12 +51,9 @@ namespace CybersportManager.Client
                 Player newplayer = new Player(nametb.Text, snametb.Text, nnametb.Text, Convert.ToInt32(agetb.Text), (RoleType)Enum.Parse(typeof(RoleType), rolecb.Text));
                 if (teamcb.SelectedItem != null)
                 {
-                    newplayer.Team = Database.searchTeam(teamcb.Text);
-                    newplayer.Teamless = false;
+                    newplayer.SetTeam(Database.searchTeam(teamcb.Text));
                 }
-                else
-                { newplayer.Teamless = true; }
-                newplayer.Homeland = countrycb.SelectedItem as Country;
+                newplayer.Homeland = countrycb.Text;
                 newplayer.Img = new BitmapImage(new Uri(image.Source.ToString()));
                
                 Database.addPlayer(newplayer);
@@ -81,7 +76,6 @@ namespace CybersportManager.Client
             }
         }
 
-        private ActivePage currentPage;
         private void FillTeamComboBox()
         {
             foreach (Team team in Database.allTeams)
@@ -89,7 +83,8 @@ namespace CybersportManager.Client
                 teamcb.Items.Add(team.Name);
             }
         }
-
+        
+        private ActivePage currentPage;
         private void PlayerPageBtn_Click(object sender, RoutedEventArgs e)
         {
             PlayersPage pp = new PlayersPage();

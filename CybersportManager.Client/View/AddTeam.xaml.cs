@@ -23,15 +23,68 @@ namespace CybersportManager.Client
         public AddTeam()
         {
             InitializeComponent();
-
             listView.ItemsSource = Database.allPlayers;
-            //foreach (Player p in Database.allPlayers)
-            //{
-            //    listView.Items.Add(p.Img);
-            //}
+        }
+
+        private void addbutton_Click(object sender, RoutedEventArgs e)
+        {
+            Team newteam = new Team(nametb.Text, tagtb.Text, (Region)Enum.Parse(typeof(Region), regioncb.Text));
+
+        }
+
+        private void SignPlayer_Click(object sender, RoutedEventArgs e)
+        {
+            var k = listView.SelectedItem as Player;
+            Image source = (Image)Application.Current.MainWindow.FindName(k.RoleType.ToString());
+            source =  
+
+
+
         }
 
 
+        public static T FindChild<T>(DependencyObject parent, string childName)
+   where T : DependencyObject
+        {
+            // Confirm parent and childName are valid. 
+            if (parent == null) return null;
+
+            T foundChild = null;
+
+            int childrenCount = VisualTreeHelper.GetChildrenCount(parent);
+            for (int i = 0; i < childrenCount; i++)
+            {
+                var child = VisualTreeHelper.GetChild(parent, i);
+                // If the child is not of the request child type child
+                T childType = child as T;
+                if (childType == null)
+                {
+                    // recursively drill down the tree
+                    foundChild = FindChild<T>(child, childName);
+
+                    // If the child is found, break so we do not overwrite the found child. 
+                    if (foundChild != null) break;
+                }
+                else if (!string.IsNullOrEmpty(childName))
+                {
+                    var frameworkElement = child as FrameworkElement;
+                    // If the child's name is set for search
+                    if (frameworkElement != null && frameworkElement.Name == childName)
+                    {
+              
+                        foundChild = (T)child;
+                        break;
+                    }
+                }
+                else
+                {
+                    foundChild = (T)child;
+                    break;
+                }
+            }
+
+            return foundChild;
+        }   
 
         private ActivePage currentPage;
         private void PlayerPageBtn_Click(object sender, RoutedEventArgs e)
@@ -94,9 +147,6 @@ namespace CybersportManager.Client
             }
         }
 
-        private void addbutton_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
     }
 }

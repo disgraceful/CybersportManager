@@ -24,13 +24,13 @@
         </Border>
         <Button x:Name="AddBtn" Content="Add" HorizontalAlignment="Left" Margin="134,10,0,0" VerticalAlignment="Top" Width="63" Click="AddBtn_Click" Height="36"/>
         <Button x:Name="ViewBtn" Content="View" HorizontalAlignment="Left" Margin="218,10,0,0" VerticalAlignment="Top" Width="63" Click="ViewBtn_Click" Height="36"/>
-        <Label x:Name="namelabel" Content="Name:" HorizontalAlignment="Left" Margin="108,88,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
-        <Label x:Name="taglabel" Content="Tag:" HorizontalAlignment="Left" Margin="108,144,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
-        <TextBox x:Name="nametb" HorizontalAlignment="Left" Height="29" Margin="180,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106"/>
-        <TextBox x:Name="tagtb" HorizontalAlignment="Left" Height="29" Margin="180,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
-        <Button x:Name="addbutton" Content="Confirm"  HorizontalAlignment="Left" Margin="108,391,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="addbutton_Click"/>
-        <Label x:Name="regionlabel" Content="Region:" HorizontalAlignment="Left" Margin="108,207,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
-        <ComboBox x:Name="regioncb" HorizontalAlignment="Left" Margin="180,207,0,0" VerticalAlignment="Top" Width="101" Height="29">
+        <Label x:Name="namelabel" Content="Name:" HorizontalAlignment="Left" Margin="94,229,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
+        <Label x:Name="taglabel" Content="Tag:" HorizontalAlignment="Left" Margin="94,285,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
+        <TextBox x:Name="nametb" HorizontalAlignment="Left" Height="29" Margin="166,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106"/>
+        <TextBox x:Name="tagtb" HorizontalAlignment="Left" Height="29" Margin="166,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
+        <Button x:Name="addbutton" Content="Confirm"  HorizontalAlignment="Left" Margin="100,421,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="addbutton_Click"/>
+        <Label x:Name="regionlabel" Content="Region:" HorizontalAlignment="Left" Margin="94,348,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
+        <ComboBox x:Name="regioncb" HorizontalAlignment="Left" Margin="166,348,0,0" VerticalAlignment="Top" Width="101" Height="29">
             <ComboBoxItem Name="Europe">Europe</ComboBoxItem>
             <ComboBoxItem Name="NorthAmerica">NorthAmerica</ComboBoxItem>
             <ComboBoxItem Name="Asia">Asia</ComboBoxItem>
@@ -52,6 +52,16 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
+        <Label x:Name="top_label" Content="Top" HorizontalAlignment="Left" Margin="100,64,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
+        <Label x:Name="jungle_label" Content="Jungle" HorizontalAlignment="Left" Margin="200,64,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
+        <Label x:Name="mid_label" Content="Mid" HorizontalAlignment="Left" Margin="300,64,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
+        <Label x:Name="carry_label" Content="Carry" HorizontalAlignment="Left" Margin="400,64,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
+        <Label x:Name="support_label" Content="Support" HorizontalAlignment="Left" Margin="500,64,0,0" VerticalAlignment="Top" Height="31" Width="92"/>
+        <Image x:Name="Top" HorizontalAlignment="Left" Height="100" Margin="190,102,0,0" VerticalAlignment="Top" Width="75"/>
+        <Image x:Name="Jungle" HorizontalAlignment="Left" Height="100" Margin="90,100,0,0" VerticalAlignment="Top" Width="75"/>
+        <Image x:Name="Mid" HorizontalAlignment="Left" Height="100" Margin="290,100,0,0" VerticalAlignment="Top" Width="75"/>
+        <Image x:Name="Carry" HorizontalAlignment="Left" Height="100" Margin="390,100,0,0" VerticalAlignment="Top" Width="75"/>
+        <Image x:Name="Support" HorizontalAlignment="Left" Height="100" Margin="490,100,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="SignPlayer" Content="Sign Player" HorizontalAlignment="Left" Margin="701,443,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="SignPlayer_Click"/>
     </Grid>
 </UserControl>

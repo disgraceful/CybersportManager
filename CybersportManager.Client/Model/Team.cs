@@ -25,6 +25,11 @@ namespace CybersportManager.Client
             this.TeamRegion = region;
         }
 
+        public SignPlayer()
+        {
+
+        }
+
         public List<string> fieldsToList()
         {
             List<string> datalist = new List<string>();
@@ -32,18 +37,7 @@ namespace CybersportManager.Client
             datalist.Add(TeamTag);
             datalist.Add(TeamRegion.ToString());
             return datalist;
-        }
-
-        public override string ToString()
-        {
-            if (this == null)
-            {
-                return "None";
-            }
-            else
-                return Name;
-        }
-        
+        }       
     }
     public enum Region
     {

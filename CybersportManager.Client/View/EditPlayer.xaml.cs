@@ -13,24 +13,47 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CybersportManager.Client
+namespace CybersportManager.Client.View
 {
     /// <summary>
-    /// Interaction logic for ViewTeams.xaml
+    /// Interaction logic for EditPlayer.xaml
     /// </summary>
-    public partial class ViewTeams : UserControl
+    public partial class EditPlayer : UserControl
     {
-        public ViewTeams()
+        public EditPlayer()
         {
-            var list = Database.allTeams;
-            CollectionViewSource itemCollectionViewSource;
-            itemCollectionViewSource = (CollectionViewSource)(FindResource("ItemCollectionViewSource"));
-            itemCollectionViewSource.Source = list;
             InitializeComponent();
         }
+        public Player EditingPlayer;
+    
+        private void selectimage_Click(object sender, RoutedEventArgs e)
+        {
 
-        public ActivePage currentPage;
-            private void PlayerPageBtn_Click(object sender, RoutedEventArgs e)
+        }
+
+        private void confirmchanges_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void FillControls()
+        {
+            //CHECK IF WORKS AND ADD VALUECHANGED EVENTS
+            //FILL TEAMCOMBOBOX
+            //GODDAMIT
+            nametb.Text = EditingPlayer.Name;
+            snametb.Text = EditingPlayer.SecondName;
+            nnametb.Text = EditingPlayer.NickName;
+            agetb.Text = EditingPlayer.Age.ToString();
+            rolecb.Text = EditingPlayer.Name;
+            teamcb.Text = EditingPlayer.Team.Name;
+            countrycb.Text = EditingPlayer.Homeland;
+            image.Source = EditingPlayer.Img;
+        }
+
+        private ActivePage currentPage;
+
+        private void PlayerPageBtn_Click(object sender, RoutedEventArgs e)
         {
             PlayersPage pp = new PlayersPage();
             currentPage = ActivePage.Players;
@@ -89,5 +112,7 @@ namespace CybersportManager.Client
                     break;
             }
         }
+
+      
     }
 }

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\App.xaml
-9-880872777
+10-685881080
 1-700971281
-21980665268
+22-503041928
 151984215308
-View\AddPlayer.xaml;View\AddTeam.xaml;View\HeroesPage.xaml;View\Main.xaml;View\PlayersPage.xaml;View\TeamsPage.xaml;View\TournamentsPage.xaml;View\ViewPlayers.xaml;View\ViewTeams.xaml;
+View\AddPlayer.xaml;View\AddTeam.xaml;View\EditPlayer.xaml;View\HeroesPage.xaml;View\Main.xaml;View\PlayersPage.xaml;View\TeamsPage.xaml;View\TournamentsPage.xaml;View\ViewPlayers.xaml;View\ViewTeams.xaml;
 
-False
+True
 

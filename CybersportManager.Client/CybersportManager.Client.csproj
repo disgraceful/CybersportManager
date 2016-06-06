@@ -76,6 +76,9 @@
       <DependentUpon>AddTeam.xaml</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
+    <Compile Include="View\EditPlayer.xaml.cs">
+      <DependentUpon>EditPlayer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\HeroesPage.xaml.cs">
       <DependentUpon>HeroesPage.xaml</DependentUpon>
     </Compile>
@@ -99,6 +102,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AddTeam.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditPlayer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

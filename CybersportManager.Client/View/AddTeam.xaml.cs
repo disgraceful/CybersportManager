@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,66 +27,39 @@ namespace CybersportManager.Client
             listView.ItemsSource = Database.allPlayers;
         }
 
+        List<Player> signedplayers = new List<Player>();
         private void addbutton_Click(object sender, RoutedEventArgs e)
         {
             Team newteam = new Team(nametb.Text, tagtb.Text, (Region)Enum.Parse(typeof(Region), regioncb.Text));
-
+            foreach (Player p in signedplayers)
+            {
+                p.SetTeam(newteam);
+            }
+            newteam.Img = new BitmapImage(new Uri(image.Source.ToString()));
+            Database.allTeams.Add(newteam);
         }
 
         private void SignPlayer_Click(object sender, RoutedEventArgs e)
         {
             var k = listView.SelectedItem as Player;
-            Image source = (Image)Application.Current.MainWindow.FindName(k.RoleType.ToString());
-            source =  
-
-
-
+            Image playerimg = (Image)this.FindName(k.RoleType.ToString());
+            playerimg.Source = k.Img;
+            signedplayers.Add(k);
         }
 
+        OpenFileDialog op = new OpenFileDialog();
 
-        public static T FindChild<T>(DependencyObject parent, string childName)
-   where T : DependencyObject
+        private void chooseimg_Click(object sender, RoutedEventArgs e)
         {
-            // Confirm parent and childName are valid. 
-            if (parent == null) return null;
-
-            T foundChild = null;
-
-            int childrenCount = VisualTreeHelper.GetChildrenCount(parent);
-            for (int i = 0; i < childrenCount; i++)
+            op.Title = "Select an image";
+            op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
+              "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
+              "Portable Network Graphic (*.png)|*.png";
+            if (op.ShowDialog() == true)
             {
-                var child = VisualTreeHelper.GetChild(parent, i);
-                // If the child is not of the request child type child
-                T childType = child as T;
-                if (childType == null)
-                {
-                    // recursively drill down the tree
-                    foundChild = FindChild<T>(child, childName);
-
-                    // If the child is found, break so we do not overwrite the found child. 
-                    if (foundChild != null) break;
-                }
-                else if (!string.IsNullOrEmpty(childName))
-                {
-                    var frameworkElement = child as FrameworkElement;
-                    // If the child's name is set for search
-                    if (frameworkElement != null && frameworkElement.Name == childName)
-                    {
-              
-                        foundChild = (T)child;
-                        break;
-                    }
-                }
-                else
-                {
-                    foundChild = (T)child;
-                    break;
-                }
+                image.Source = new BitmapImage(new Uri(op.FileName));
             }
-
-            return foundChild;
-        }   
-
+        }
         private ActivePage currentPage;
         private void PlayerPageBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -146,7 +120,6 @@ namespace CybersportManager.Client
                     break;
             }
         }
-
-
+       
     }
 }

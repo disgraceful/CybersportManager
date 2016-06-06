@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CybersportManager.Client;
+using CybersportManager.Client.View;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
@@ -24,16 +26,30 @@ namespace CybersportManager.Client
     /// </summary>
     public partial class ViewPlayers : UserControl
     {
-        public ActivePage currentPage;
         public ViewPlayers()
         {
             var list = Database.allPlayers;   
-            InitializeComponent();
             CollectionViewSource itemCollectionViewSource;
             itemCollectionViewSource = (CollectionViewSource)(FindResource("ItemCollectionViewSource"));
             itemCollectionViewSource.Source = list;
+            InitializeComponent();
         }
-      
+
+        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Player item = playerTable1.SelectedItem as Player;
+            EditPlayer ep = new EditPlayer();
+            ep.EditingPlayer = item;
+            this.Content = ep;
+
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private ActivePage currentPage;
         private void PlayerPageBtn_Click(object sender, RoutedEventArgs e)
         {
             PlayersPage pp = new PlayersPage();
@@ -93,5 +109,7 @@ namespace CybersportManager.Client
                     break;
             }
         }
+
+  
     }
 }

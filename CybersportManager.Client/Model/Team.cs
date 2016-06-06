@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace CybersportManager.Client
 {
@@ -10,7 +11,7 @@ namespace CybersportManager.Client
     {
         public string TeamTag { get; set; }
         public Region TeamRegion { get; set; }
-        public string Imgpath { get; set; }
+        public BitmapImage Img { get; set; }
 
         public List<Player> CurRoster
         {
@@ -25,17 +26,13 @@ namespace CybersportManager.Client
             this.TeamRegion = region;
         }
 
-        public SignPlayer()
-        {
-
-        }
-
         public List<string> fieldsToList()
         {
             List<string> datalist = new List<string>();
             datalist.Add(Name);
             datalist.Add(TeamTag);
             datalist.Add(TeamRegion.ToString());
+            datalist.Add(Img.UriSource.ToString());
             return datalist;
         }       
     }

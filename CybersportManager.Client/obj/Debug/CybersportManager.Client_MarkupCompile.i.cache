@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Kashapov\Desktop\TheReasonsIHateMyLife\oop\EndTermProject\CybersportManager\CybersportManager.Client\obj\Debug\
+C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\obj\Debug\
 CybersportManager.Client
 none
 false
 DEBUG;TRACE
-C:\Users\Kashapov\Desktop\TheReasonsIHateMyLife\oop\EndTermProject\CybersportManager\CybersportManager.Client\App.xaml
-9-880872777
+C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\App.xaml
+10-685881080
 1-700971281
-251699381822
+261633546363
 151984215308
-View\AddPlayer.xaml;View\AddTeam.xaml;View\HeroesPage.xaml;View\Main.xaml;View\PlayersPage.xaml;View\TeamsPage.xaml;View\TournamentsPage.xaml;View\ViewPlayers.xaml;View\ViewTeams.xaml;
+View\AddPlayer.xaml;View\AddTeam.xaml;View\EditPlayer.xaml;View\HeroesPage.xaml;View\Main.xaml;View\PlayersPage.xaml;View\TeamsPage.xaml;View\TournamentsPage.xaml;View\ViewPlayers.xaml;View\ViewTeams.xaml;
 
 False
 

@@ -18,14 +18,14 @@ namespace CybersportManager.Client
         public static List<Hero> allHeroes = new List<Hero>();
         public static List<Tournament> allTournaments = new List<Tournament>();
 
-        private static string rootPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+        private static string ROOT_PATH = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory()));
 
-      
+
         public static void readPlayers()
         {
-            Debug.Write(rootPath);
+            Debug.Write(ROOT_PATH);
             allPlayers = new List<Player>();
-            CsvReader reader = new CsvReader(rootPath + "/db/players.csv");
+            CsvReader reader = new CsvReader(ROOT_PATH + "/db/players.csv");
             CSVRow row = new CSVRow();
             try
             {
@@ -48,16 +48,18 @@ namespace CybersportManager.Client
             catch (Exception e) { }
             reader.Close();
         }
+        
         public static void addPlayer(Player newplayer)
         {
             allPlayers.Add(newplayer);
             savePlayers();
         }
+
         public static void savePlayers()
         {
             if (allPlayers != null && allPlayers.Count > 0)
             {
-                CsvWriter playerwriter = new CsvWriter(rootPath + "/db/players.csv");
+                CsvWriter playerwriter = new CsvWriter(ROOT_PATH + "/db/players.csv");
                 foreach (Player player in allPlayers)
                 {
                     CSVRow row = new CSVRow();
@@ -69,14 +71,12 @@ namespace CybersportManager.Client
                 }
                 playerwriter.Close();
             }
-
-
         }
 
         public static void readTeams()
         {
             allTeams = new List<Team>();
-            CsvReader reader = new CsvReader(rootPath + "/db/teams.csv");
+            CsvReader reader = new CsvReader(ROOT_PATH + "/db/teams.csv");
             CSVRow row = new CSVRow();
             try
             {
@@ -85,6 +85,7 @@ namespace CybersportManager.Client
                     for (int i = 0; i < row.Count; i++)
                     {
                         Team newteam = new Team(row[i], row[i + 1], (Region)Enum.Parse(typeof(Region), row[i + 2]));
+                        newteam.Img = new BitmapImage(new Uri(row[i + 3]));
                         allTeams.Add(newteam);
                         break;
                     }
@@ -106,7 +107,7 @@ namespace CybersportManager.Client
             {
                 if (allTeams != null && allTeams.Count > 0)
                 {
-                    CsvWriter teamwriter = new CsvWriter(rootPath + "/db/teams.csv");
+                    CsvWriter teamwriter = new CsvWriter(ROOT_PATH + "/db/teams.csv");
                     foreach (Team team in allTeams)
                     {
                         CSVRow row = new CSVRow();
@@ -133,7 +134,7 @@ namespace CybersportManager.Client
             }
             return null;
         }
-      }
+    }
 
     public class CSVRow : List<string>
     {
@@ -232,7 +233,7 @@ namespace CybersportManager.Client
 
             return (row.Count > 0);
         }
- 
+
     }
 }
 

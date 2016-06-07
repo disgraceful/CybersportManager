@@ -9,6 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using CybersportManager.Client;
 using CybersportManager.Client.View;
 using System;
 using System.Diagnostics;

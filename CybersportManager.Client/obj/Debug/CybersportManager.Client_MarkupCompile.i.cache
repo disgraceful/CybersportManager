@@ -10,11 +10,17 @@ none
 false
 DEBUG;TRACE
 C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\App.xaml
+<<<<<<< HEAD
 10-685881080
 1-700971281
 261633546363
+=======
+9-880872777
+1-700971281
+25-1177713737
+>>>>>>> parent of 188c82d... minor team add changes
 151984215308
 View\AddPlayer.xaml;View\AddTeam.xaml;View\EditPlayer.xaml;View\HeroesPage.xaml;View\Main.xaml;View\PlayersPage.xaml;View\TeamsPage.xaml;View\TournamentsPage.xaml;View\ViewPlayers.xaml;View\ViewTeams.xaml;
 
-False
+True
 

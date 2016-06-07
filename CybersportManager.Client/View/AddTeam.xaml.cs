@@ -24,6 +24,7 @@ namespace CybersportManager.Client
         public AddTeam()
         {
             InitializeComponent();
+<<<<<<< HEAD
             listView.ItemsSource = Database.allPlayers;
         }
 
@@ -46,9 +47,20 @@ namespace CybersportManager.Client
             playerimg.Source = k.Img;
             signedplayers.Add(k);
         }
+=======
+
+            listView.ItemsSource = Database.allPlayers;
+            //foreach (Player p in Database.allPlayers)
+            //{
+            //    listView.Items.Add(p.Img);
+            //}
+        }
+
+>>>>>>> parent of 188c82d... minor team add changes
 
         OpenFileDialog op = new OpenFileDialog();
 
+<<<<<<< HEAD
         private void chooseimg_Click(object sender, RoutedEventArgs e)
         {
             op.Title = "Select an image";
@@ -60,6 +72,8 @@ namespace CybersportManager.Client
                 image.Source = new BitmapImage(new Uri(op.FileName));
             }
         }
+=======
+>>>>>>> parent of 188c82d... minor team add changes
         private ActivePage currentPage;
         private void PlayerPageBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -120,6 +134,14 @@ namespace CybersportManager.Client
                     break;
             }
         }
+<<<<<<< HEAD
        
+=======
+
+        private void addbutton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+>>>>>>> parent of 188c82d... minor team add changes
     }
 }

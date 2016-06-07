@@ -34,7 +34,18 @@ namespace CybersportManager.Client
             datalist.Add(TeamRegion.ToString());
             datalist.Add(Img.UriSource.ToString());
             return datalist;
-        }       
+        }
+
+        public override string ToString()
+        {
+            if (this == null)
+            {
+                return "None";
+            }
+            else
+                return Name;
+        }
+        
     }
     public enum Region
     {

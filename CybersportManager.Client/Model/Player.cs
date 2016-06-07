@@ -18,6 +18,7 @@ namespace CybersportManager.Client
         public bool Teamless => _teamid != null ? true : false;
 
         private Guid _teamid;
+
         public Team Team
         {
             get {

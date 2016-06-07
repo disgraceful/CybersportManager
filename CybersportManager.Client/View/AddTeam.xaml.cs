@@ -36,7 +36,7 @@ namespace CybersportManager.Client
                 p.SetTeam(newteam);
             }
             newteam.Img = new BitmapImage(new Uri(image.Source.ToString()));
-            Database.allTeams.Add(newteam);
+            Database.addTeam(newteam);
         }
 
         private void SignPlayer_Click(object sender, RoutedEventArgs e)

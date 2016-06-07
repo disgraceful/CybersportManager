@@ -22,10 +22,13 @@ namespace CybersportManager.Client
     {
         public ViewTeams()
         {
-            var list = Database.allTeams;
-            CollectionViewSource itemCollectionViewSource;
-            itemCollectionViewSource = (CollectionViewSource)(FindResource("ItemCollectionViewSource"));
-            itemCollectionViewSource.Source = list;
+            if (IsLoaded)
+            {
+                var list = Database.allTeams;
+                CollectionViewSource itemCollectionViewSource;
+                itemCollectionViewSource = (CollectionViewSource)(FindResource("TeamResource"));
+                itemCollectionViewSource.Source = list;
+            }
             InitializeComponent();
         }
 

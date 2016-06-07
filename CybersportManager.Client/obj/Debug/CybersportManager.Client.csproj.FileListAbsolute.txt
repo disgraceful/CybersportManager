@@ -53,3 +53,4 @@ C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\obj\Debug\App.
 C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\bin\Debug\images\players\default_player.jpg
 C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\obj\Debug\CybersportManager.Client_Content.g.cs
 C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\obj\Debug\View\EditPlayer.g.cs
+C:\Users\Naiil\Desktop\CybersportManager\CybersportManager.Client\obj\Debug\View\EditPlayer.baml

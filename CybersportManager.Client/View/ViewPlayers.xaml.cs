@@ -28,11 +28,15 @@ namespace CybersportManager.Client
     {
         public ViewPlayers()
         {
-            var list = Database.allPlayers;   
-            CollectionViewSource itemCollectionViewSource;
-            itemCollectionViewSource = (CollectionViewSource)(FindResource("ItemCollectionViewSource"));
-            itemCollectionViewSource.Source = list;
+            if (IsLoaded)
+            {
+                var list = Database.allPlayers;
+                CollectionViewSource itemCollectionViewSource;
+                itemCollectionViewSource = (CollectionViewSource)(FindResource("PlayerResource"));
+                itemCollectionViewSource.Source = list;      
+            }
             InitializeComponent();
+
         }
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
@@ -41,7 +45,6 @@ namespace CybersportManager.Client
             EditPlayer ep = new EditPlayer();
             ep.EditingPlayer = item;
             this.Content = ep;
-
         }
 
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
